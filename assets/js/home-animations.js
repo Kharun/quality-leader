@@ -80,18 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   specTl.from(
-    ".specialization_tabs_item",
-    {
-      y: 30,
-      opacity: 0,
-      stagger: 0.15,
-      duration: 0.6,
-      ease: "power3.out",
-    },
-    "-=0.4"
-  );
-
-  specTl.from(
     ".specialization_left img",
     {
       x: -50,

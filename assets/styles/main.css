@@ -293,14 +293,19 @@ h2 {
 }
 .specialization_price_item {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 100px;
   align-items: center;
+  width: 100%;
 }
 .specialization_price_name {
   font-weight: 400;
   font-size: 18px;
-  width: 310px;
+}
+.specialization_price_right {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 .specialization_price_title {
   font-weight: 700;
@@ -528,4 +533,156 @@ h2 {
   text-align: center;
   padding-top: 40px;
   user-select: none;
+}
+.progress_bar {
+  width: 100%;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .specialization_main {
+    flex-direction: column;
+  }
+  .specialization_left {
+    width: 100%;
+  }
+  .specialization_left img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+  .quiz_content {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 980px) {
+  .header_top_left p {
+    display: none;
+  }
+  .header_top_btn {
+    display: none;
+  }
+  .header_bottom {
+    display: none;
+  }
+  .header_top {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e9ee;
+  }
+  .burger {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about_number_content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner_content {
+    max-width: unset;
+    width: 100%;
+    padding: unset;
+  }
+  .banner_slide_top {
+    font-size: 18px;
+  }
+  .banner_slide_title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .banner_slide_text {
+    font-size: 16px;
+  }
+  .about_number_item h2 {
+    font-size: 28px;
+  }
+  .banner {
+    padding-bottom: 60px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .specialization_tabs {
+    padding: 18px 0 32px 0;
+  }
+  .specialization_main {
+    gap: 32px;
+  }
+  .specialization_price_name {
+    width: 100%;
+  }
+  .quiz_left_items {
+    padding: 0 48px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quiz_quest_title {
+    font-size: 16px;
+  }
+  .quiz_quest_quantity {
+    font-size: 14px;
+  }
+  .banner_slide {
+    border-radius: unset;
+  }
+}
+@media screen and (max-width: 620px) {
+  .header_top .header_top_phone {
+    display: none;
+  }
+  .banner_swiper_pagination {
+    display: none;
+  }
+  .specialization_tabs {
+    overflow-x: auto;
+  }
+  .specialization_tabs_item {
+    white-space: nowrap;
+  }
+  .specialization_price_item {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 14px;
+  }
+  .specialization_right_get_price {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .specialization_right_bottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    padding: 20px;
+  }
+  .specialization {
+    padding-bottom: 40px;
+  }
+  .quiz_left_items {
+    padding: unset;
+  }
+  .quiz_bottom {
+    flex-direction: column;
+  }
+  .quiz_bottom_left {
+    display: none;
+  }
+  .quiz_left {
+    padding: 20px;
+  }
+  .about_number_item h2 {
+    font-size: 24px;
+  }
+  .about_number_content {
+    gap: 14px;
+  }
+  .about_number_item {
+    padding: 14px 20px;
+  }
+  .banner_slide_title {
+    font-size: 28px;
+  }
+  .banner_slide {
+    padding: 36px 16px;
+  }
 }
