@@ -507,53 +507,446 @@
           <h2 class="title">Рассчитаем стоимость за 5 минут</h2>
           <div class="quiz_content">
             <div class="quiz_left">
-              <img src="./assets/img/progress.svg" class="progress_bar" alt="" />
+              <div class="progress_bar">
+                <div class="progress_bar_bg"></div>
+                <p>Пройдено <span>33%</span></p>
+              </div>
               <div class="quiz_left_content">
                 <div class="quiz_quest">
                   <div class="quiz_quest_quantity">Вопрос 1 из 5</div>
                   <h2 class="quiz_quest_title">Выберите помещение</h2>
                 </div>
-                <div class="quiz_left_items">
+                <div class="quiz_left_items active">
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_1.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Квартира</p>
-                    <img src="./assets/img/checkbox.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_2.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Загородный дом</p>
-                    <img src="./assets/img/checkbox_gray.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_3.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Коммерческий объект</p>
-                    <img src="./assets/img/checkbox_gray.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_4.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Промышленный объект</p>
-                    <img src="./assets/img/checkbox_gray.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_5.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Паркинг</p>
-                    <img src="./assets/img/checkbox_gray.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                   <div class="quiz_left_item">
                     <img src="./assets/img/quiz_img_6.png" class="quiz_left_item_bg" alt="" />
                     <p class="quiz_left_item_title">Другое</p>
-                    <img src="./assets/img/checkbox_gray.svg" class="quiz_left_item_checkbox" alt="" />
+                    <label class="custom_checkbox rooms">
+                      <input type="checkbox" />
+                      <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                          stroke="#A6A6A6"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </label>
                   </div>
                 </div>
-                <div class="quiz_bottom">
-                  <div class="quiz_bottom_left">
-                    <img src="./assets/img/quiz_touch.svg" alt="" />
-                    <p class="quiz_bottom_text">
-                      <span>Нажимайте на вариант ответа</span> и переходите к следующему вопросу
-                    </p>
+                <div class="quiz_questions">
+                  <div class="quiz_questions_block">
+                    <div class="quiz_questions_block_item">
+                      <label for="quare_1" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="quare_1" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>100-500тыс. м2</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="quare_2" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="quare_2" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>500-1000тыс. м2</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="quare_3" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="quare_3" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>1000-5000тыс. м2</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="quare_4" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="quare_4" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>более 5000тыс. м2</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="quare_5" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="quare_5" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Другое</p>
+                      </label>
+                    </div>
                   </div>
-                  <div class="quiz_bottom_right">Следующий вопрос</div>
+                  <div class="quiz_questions_block">
+                    <div class="quiz_questions_block_item">
+                      <label for="type_1" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="type_1" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Устройство пола</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="type_2" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="type_2" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Устройство стен</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="type_3" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="type_3" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Устройство кровли</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="type_4" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="type_4" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Демонтаж</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="type_5" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="type_5" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Другое</p>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="quiz_questions_block">
+                    <div class="quiz_questions_block_item">
+                      <label for="metro_1" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="metro_1" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Москва, МО до 20 км от МКАД</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="metro_2" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="metro_2" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>от 20 до 60 км от МКАД</p>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="quiz_questions_block">
+                    <div class="quiz_questions_block_item">
+                      <label for="date_1" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="date_1" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>В течение 3-х дней</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="date_2" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="date_2" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>В течение месяца</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="date_3" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="date_3" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>В течение недели</p>
+                      </label>
+                    </div>
+                    <div class="quiz_questions_block_item">
+                      <label for="date_4" class="quiz_questions_label">
+                        <label class="custom_checkbox">
+                          <input type="checkbox" id="date_4" />
+                          <svg class="checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M13.3337 4L6.00033 11.3333L2.66699 8"
+                              stroke="#A6A6A6"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </label>
+                        <p>Ещё думаю</p>
+                      </label>
+                    </div>
+                    <div class="quiz_comment quiz_questions_block_grid">
+                      <h2>Комментарий</h2>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="quiz_results">
+                <div class="quiz_result_left">
+                  <div class="quiz_results_top">
+                    <h2>Расчёт готов!</h2>
+                    <p>Заполните контактные данные сейчас и получите онлайн-расчет в WhatsApp или смс.</p>
+                  </div>
+                  <div class="quiz_result_content">
+                    <div class="quiz_results_socials">
+                      <div class="quiz_results_social">
+                        <img src="./assets/img/tg.svg" alt="" />
+                        <p>Telegram</p>
+                      </div>
+                      <div class="quiz_results_social">
+                        <img src="./assets/img/whatsapp_quiz.svg" alt="" />
+                        <p>WhatsApp</p>
+                      </div>
+                      <div class="quiz_results_social">
+                        <img src="./assets/img/viber.svg" alt="" />
+                        <p>Viber</p>
+                      </div>
+                      <div class="quiz_results_social">
+                        <img src="./assets/img/quiz_email.svg" alt="" />
+                        <p>E-mail</p>
+                      </div>
+                    </div>
+                    <div class="quiz_result_inputs">
+                      <input type="text" placeholder="Фио" class="quiz_result_input quiz_input_name" />
+                      <input type="text" placeholder="Номер телефона" class="quiz_result_input quiz_input_phone" />
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz_minutes">
+                  Засекайте
+                  <span>30</span>
+                  минут
+                </div>
+                <img src="./assets/img/quiz_result.png" alt="" class="quiz_img" />
+              </div>
+              <div class="quiz_bottom">
+                <div class="quiz_bottom_left">
+                  <img src="./assets/img/quiz_touch.svg" alt="" />
+                  <p class="quiz_bottom_text">
+                    <span>Нажимайте на вариант ответа</span> и переходите к следующему вопросу
+                  </p>
+                </div>
+                <div class="quiz_bottom_right">Следующий вопрос</div>
               </div>
             </div>
             <div class="quiz_right">
@@ -587,6 +980,10 @@
                 </div>
               </div>
               <div class="quiz_free">Это бесплатно</div>
+            </div>
+            <div class="quiz_done">
+              <img src="./assets/img/quiz_done.svg" alt="" />
+              <p>Расчёт отправлен!</p>
             </div>
           </div>
         </div>
