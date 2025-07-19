@@ -772,6 +772,8 @@ h2 {
 .progress_bar p {
   font-size: 14px;
   font-weight: 400;
+  position: relative;
+  z-index: 2;
   span {
     font-weight: 600;
   }
@@ -786,6 +788,7 @@ h2 {
   height: 24px;
   border-radius: 6px;
   z-index: 1;
+  transition: .3s ease-in-out;
 }
 .custom_checkbox {
   display: inline-flex;

@@ -85,3 +85,51 @@ $(".specialization_tabs_item").click(function () {
     } else return;
   });
 });
+
+ document.addEventListener("DOMContentLoaded", () => {
+    const quizItems = document.querySelectorAll(".quiz_left_items, .quiz_questions_block");
+    const progressText = document.querySelector(".progress_bar span");
+    const progressBar = document.querySelector(".progress_bar_bg");
+    const nextBtn = document.querySelector(".quiz_bottom_right");
+    const resultBlock = document.querySelector(".quiz_results");
+    const doneBlock = document.querySelector(".quiz_done");
+    const quizContent = document.querySelector(".quiz_left_content");
+    const quizRight = document.querySelector(".quiz_right");
+
+    let currentStep = 0;
+    const totalSteps = quizItems.length;
+
+    function updateProgress() {
+      const percent = Math.round(((currentStep + 1) / totalSteps) * 100);
+      progressText.textContent = percent + "%";
+      progressBar.style.width = percent + "%";
+    }
+
+    function showStep(index) {
+      quizItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+      });
+      updateProgress();
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (currentStep < totalSteps - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        quizContent.classList.add("hidden");
+        quizRight.classList.add("hidden");
+        resultBlock.classList.add("active");
+      }
+    });
+
+    const sendBtn = document.querySelector(".quiz_results_social");
+    if (sendBtn) {
+      sendBtn.addEventListener("click", () => {
+        resultBlock.classList.remove("active");
+        doneBlock.classList.add("active");
+      });
+    }
+
+    showStep(currentStep);
+  });
