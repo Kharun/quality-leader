@@ -1023,18 +1023,29 @@ h2 {
 }
 .stages_items {
   margin-top: 45px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 110px 210px;
-  margin-left: 60px;
   position: relative;
+}
+.stages_items::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: var(--red);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .stages_item {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  align-items: start;
+  align-items: center;
   position: relative;
+  background: var(--white);
+  text-align: center;
 }
 .stages_item p {
   font-weight: 400;
@@ -2053,6 +2064,13 @@ h2 {
   }
   .completed {
     padding: 60px 0;
+  }
+  .stages_block {
+    display: none;
+  }
+  .stages_items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 620px) {
