@@ -1698,7 +1698,7 @@ h2 {
   outline: unset;
   border-bottom: 1px solid var(--black);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 .callback_input::placeholder {
   color: var(--gray);

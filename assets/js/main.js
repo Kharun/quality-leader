@@ -137,6 +137,14 @@ $(document).ready(function () {
       return;
     }
 
+    const currentQuizBlock = quizItems.eq(currentStep);
+    const hasChecked = currentQuizBlock.find('input[type="checkbox"]:checked').length > 0;
+
+    if (!hasChecked) {
+      alert("Пожалуйста, выберите хотя бы один вариант перед продолжением");
+      return;
+    }
+
     if (currentStep < totalSteps - 1) {
       currentStep++;
       showStep(currentStep);
