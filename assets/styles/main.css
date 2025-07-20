@@ -593,6 +593,7 @@ h2 {
   padding-top: 45px;
   display: flex;
   gap: 20px;
+  user-select: none;
 }
 .quiz_left {
   background: var(--white);
@@ -603,6 +604,9 @@ h2 {
   gap: 28px;
   width: 100%;
   transition: 0.2s ease-in-out;
+}
+.quiz_left.hidden {
+  display: none;
 }
 .quiz_quest {
   padding-bottom: 16px;
@@ -788,7 +792,7 @@ h2 {
   height: 24px;
   border-radius: 6px;
   z-index: 1;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .custom_checkbox {
   display: inline-flex;
@@ -929,6 +933,7 @@ h2 {
   border-radius: 14px;
   border: 2px solid var(--white);
   transition: 0.2s ease-in-out;
+  user-select: none;
 }
 .quiz_results_social:hover {
   border: 2px solid var(--green);
@@ -975,7 +980,8 @@ h2 {
 .quiz_img {
   border-radius: 20px;
 }
-.quiz_done {
+.quiz_done,
+.quiz_load {
   background: var(--white);
   border-radius: 24px;
   display: none;
@@ -986,12 +992,29 @@ h2 {
   width: 100%;
   gap: 20px;
 }
-.quiz_done.active {
+.quiz_done.active,
+.quiz_load.active {
   display: flex;
 }
 .quiz_done p {
   font-weight: 600;
   font-size: 24px;
+}
+.quiz_load p {
+  font-weight: 600;
+  font-size: 24px;
+}
+.quiz_load img {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* stages */

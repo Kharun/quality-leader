@@ -86,50 +86,83 @@ $(".specialization_tabs_item").click(function () {
   });
 });
 
- document.addEventListener("DOMContentLoaded", () => {
-    const quizItems = document.querySelectorAll(".quiz_left_items, .quiz_questions_block");
-    const progressText = document.querySelector(".progress_bar span");
-    const progressBar = document.querySelector(".progress_bar_bg");
-    const nextBtn = document.querySelector(".quiz_bottom_right");
-    const resultBlock = document.querySelector(".quiz_results");
-    const doneBlock = document.querySelector(".quiz_done");
-    const quizContent = document.querySelector(".quiz_left_content");
-    const quizRight = document.querySelector(".quiz_right");
+$(document).ready(function () {
+  const quizItems = $(".quiz_left_items, .quiz_questions_block");
+  const progressText = $(".progress_bar span");
+  const progressBar = $(".progress_bar_bg");
+  const nextBtn = $(".quiz_bottom_right");
+  const resultBlock = $(".quiz_results");
+  const doneBlock = $(".quiz_done");
+  const quizContent = $(".quiz_left_content");
+  const quizRight = $(".quiz_right");
+  const quizLeft = $(".quiz_left");
+  const quizLoad = $(".quiz_load");
+  const resultSocial = $(".quiz_results_social");
 
-    let currentStep = 0;
-    const totalSteps = quizItems.length;
+  const questTitle = $(".quiz_quest_title");
+  const questQuantity = $(".quiz_quest_quantity");
 
-    function updateProgress() {
-      const percent = Math.round(((currentStep + 1) / totalSteps) * 100);
-      progressText.textContent = percent + "%";
-      progressBar.style.width = percent + "%";
+  const questTexts = [
+    "Выберите помещение",
+    "Выберите площадь объекта",
+    "Вид работ",
+    "Где находится объект относительно МКАД?",
+    "Когда планируете начать работы?",
+  ];
+
+  let currentStep = 0;
+  const totalSteps = quizItems.length;
+
+  function updateProgress() {
+    const percent = Math.round(((currentStep + 1) / totalSteps) * 100);
+    progressText.text(percent + "%");
+    progressBar.css("width", percent + "%");
+  }
+
+  function updateQuestionText() {
+    questQuantity.text(`Вопрос ${currentStep + 1} из ${totalSteps}`);
+    questTitle.text(questTexts[currentStep] || "");
+  }
+
+  function showStep(index) {
+    quizItems.removeClass("active").eq(index).addClass("active");
+    updateProgress();
+    updateQuestionText();
+  }
+
+  nextBtn.on("click", function () {
+    if (resultBlock.hasClass("active")) {
+      quizLeft.addClass("hidden");
+      doneBlock.addClass("active");
+      return;
     }
 
-    function showStep(index) {
-      quizItems.forEach((item, i) => {
-        item.classList.toggle("active", i === index);
-      });
-      updateProgress();
+    if (currentStep < totalSteps - 1) {
+      currentStep++;
+      showStep(currentStep);
+    } else if (currentStep + 1 === totalSteps && resultBlock && !resultBlock.hasClass("active")) {
+      quizContent.addClass("hidden");
+      quizRight.addClass("hidden");
+      quizLoad.addClass("active");
+      quizLeft.addClass("hidden");
+      resultBlock.removeClass("active");
+      setTimeout(() => {
+        quizLoad.removeClass("active");
+        quizLeft.removeClass("hidden");
+        resultBlock.addClass("active");
+        nextBtn.text("Получить расчёт");
+      }, 2000);
+    } else {
+      quizContent.addClass("hidden");
+      quizRight.addClass("hidden");
+      resultBlock.addClass("active");
     }
-
-    nextBtn.addEventListener("click", () => {
-      if (currentStep < totalSteps - 1) {
-        currentStep++;
-        showStep(currentStep);
-      } else {
-        quizContent.classList.add("hidden");
-        quizRight.classList.add("hidden");
-        resultBlock.classList.add("active");
-      }
-    });
-
-    const sendBtn = document.querySelector(".quiz_results_social");
-    if (sendBtn) {
-      sendBtn.addEventListener("click", () => {
-        resultBlock.classList.remove("active");
-        doneBlock.classList.add("active");
-      });
-    }
-
-    showStep(currentStep);
   });
+
+  resultSocial.click(function () {
+    resultSocial.removeClass("active");
+    $(this).toggleClass("active");
+  });
+
+  showStep(currentStep);
+});
