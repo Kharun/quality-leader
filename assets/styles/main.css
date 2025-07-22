@@ -1028,24 +1028,21 @@ h2 {
   gap: 110px 210px;
   position: relative;
 }
-.stages_items::before {
+/* .stages_items::before {
   content: "";
   position: absolute;
   width: 2px;
   height: 100%;
   background: var(--red);
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  left: 32px;
+} */
 .stages_item {
   display: flex;
-  flex-direction: column;
   gap: 14px;
   align-items: center;
   position: relative;
   background: var(--white);
-  text-align: center;
 }
 .stages_item p {
   font-weight: 400;
@@ -2281,6 +2278,26 @@ h2 {
     flex-direction: column;
   }
   .quiz_questions_label {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header_top_right {
+    gap: 20px;
+  }
+  .header_top_socials {
+    gap: 10px;
+  }
+  .header_top_socials img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  .header_logo {
+    max-width: 130px;
+  }
+  .footer_contact_email,
+  .footer_contact_address {
     font-size: 16px;
   }
 }
